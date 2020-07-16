@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<style>
+@font-face {
+  font-family: "Strange";
+  src: url("https://cdn.glitch.com/01b27d37-a07e-4e2e-8caf-659256274937%2FBenguiat%20Bold.ttf?v=1565268317646");
+}
+
+input {
+  background-color: black;
+  color: white;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid grey;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+body {
+  background-color: black;
+}
+
+img {
+  height: 400px;
+}
+
+#quizTitle {
+  text-align: center;
+  color: red;
+  font-family: "Strange";
+  -webkit-text-fill-color: black; 
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: red;
+  margin-top: 75px;
+  margin-bottom: 75px;
+}
+
+#pictureBox {
+  background-color: #222;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+</style>
+
+  <!--Content in the <head> element is about *HOW* to render the page - it is not visible.-->
+  <head>
+    <!--Import Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+  </head>
+  
+  <!--Content in the body is *WHAT* will be displayed on the page.-->
+  <body>
+    <div class="container">
+      <h1 id="quizTitle">
+        Stranger Quiz
+      </h1>
+      <div id="typeHere">
+        <input type="text" id="userInput">
+      </div>
+      <div id="pictureBox">
+      </div>
+    </div>
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
+
+<script>
+
+// prints "hi" in the browser's dev tools console
+console.log('Hello world');
+
+let textBox = document.querySelector("#userInput");
+
+// you will let the textbook be provided with a log for userinput when they type it in, "userInput is also with a # because it is an ID"
+
+let pictureHere = document.querySelector("#pictureBox");
+
+// console.log(textbox);
+// console.log(pictureHere);
+
+textBox.addEventListener("input", (e) => {
+  //console.log(textBox.value); 
+  //^ this just logs each letter typed in until you finish your input
+  let answer = textBox.value;
+  if (answer == "mike") {
+    pictureHere.innerHTML += `<img src = "https://cdn.glitch.com/01b27d37-a07e-4e2e-8caf-659256274937%2FScreen%20Shot%202019-08-08%20at%208.39.01%20AM.png?v=1565269664401" alt="pictureofmike">`
+    //inner.HTML allows you to insert html into this java file, to insert the image that corresponds with the input
+    textBox.value = ""
+    //^ will clean text box after a input - for a new input
+  }
+  if (answer == "dustin") {
+    pictureHere.innerHTML += `<img src = "https://cdn.glitch.com/01b27d37-a07e-4e2e-8caf-659256274937%2FScreen%20Shot%202019-08-08%20at%208.39.21%20AM.png?v=1565269664037 alt="pictureofdustin>`
+    textBox.value = ""
+  }
+  if (answer == "eleven") {
+    pictureHere.innerHTML += `<img src = "https://cdn.glitch.com/01b27d37-a07e-4e2e-8caf-659256274937%2FScreen%20Shot%202019-08-08%20at%208.39.11%20AM.png?v=1565269664594" alt="pictureofeleven">`
+    textBox.value = ""
+  }
+  if (answer == "joyce") {
+    pictureHere.innerHTML += `<img src = "https://cdn.glitch.com/01b27d37-a07e-4e2e-8caf-659256274937%2FScreen%20Shot%202019-08-08%20at%208.39.16%20AM.png?v=1565269663965" alt="pictureofjoyce>`
+    textBox.value = ""
+  }
+  if (answer == "steve") {
+    pictureHere.innerHTML += `<img src = "https://cdn.glitch.com/01b27d37-a07e-4e2e-8caf-659256274937%2FScreen%20Shot%202019-08-08%20at%208.39.33%20AM.png?v=1565269664227" alt="pictureofsteve">`
+    textBox.value = ""
+  }
+  if (answer == "lucas") {
+    pictureHere.innerHTML += `<img src = "https://cdn.glitch.com/01b27d37-a07e-4e2e-8caf-659256274937%2FScreen%20Shot%202019-08-08%20at%208.38.56%20AM.png?v=1565269664316" alt="pictureoflucas">`
+    textBox.value = ""
+  }
+  if (answer == "hopper") {
+    pictureHere.innerHTML += `<img src = "https://cdn.glitch.com/01b27d37-a07e-4e2e-8caf-659256274937%2FScreen%20Shot%202019-08-08%20at%208.39.07%20AM.png?v=1565269664510" alt="pictureofhopper">`
+    textBox.value = ""
+  }
+})
+
+//.addEventListener will allow for there to be an action after a mouse click or typing action - in this case, if there is a name input then a picture will show up
+//.addEventListener is (e)=>
+
+</script>
